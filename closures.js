@@ -80,10 +80,10 @@ function makeCounter() {
 
 //Uncomment this once you make your function
   var count = makeCounter();
-  count(); // 1
-  count(); // 2
-  count(); // 3
-  count(); // 4
+  // count(); // 1
+  // count(); // 2
+  // count(); // 3
+  // count(); // 4
 
 
 
@@ -112,8 +112,16 @@ function counterFactory(value) {
 
   // Code here.
 
-
   return {
+    inc: function() {
+      value++;
+      return value;
+    },
+    dec: function() {
+      value--;
+      return value;
+    }
+
   }
 }
 
