@@ -15,10 +15,12 @@ closure over the name variable. Invoke outer saving the return value into
 another variable called 'inner'. */
 
 // Code Here
+var inner = outer();
 
 //Once you do that, invoke inner.
 
 //Code Here
+inner();
 
 
 
@@ -91,8 +93,8 @@ properly. */
 up/down counter. The first function is called inc, this function is responsible
 for incrementing the value once. The second function is called dec, this
 function is responsible for decrementing the value by one. You will need to use
-the module pattern to achieve this. 
-Information on the module pattern available here: 
+the module pattern to achieve this.
+Information on the module pattern available here:
 http://stackoverflow.com/questions/17776940/javascript-module-pattern-with-example?answertab=votes#tab-top
 */
 
