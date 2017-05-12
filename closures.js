@@ -30,7 +30,6 @@ inner();
 
 
 
-
 /******************************************************************************\
 	#PROBLEM-02
 \******************************************************************************/
@@ -49,8 +48,12 @@ Create a callJake function that when invoked with '435-555-9248' returns 'Callin
 in your console. */
 
   //Code Here
+  function callJake(number) {
+    var dialing = callFriend('Jake');
+    return dialing(number);
+  }
 
-
+callJake('435-555-9248');
 
 
 
