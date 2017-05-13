@@ -271,7 +271,7 @@ to 5. What we need to do is console.log(i) so that it logs like so:
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
     (function(j) {
-      setTimeout(function(j) {
+      setTimeout(function() {
       	console.log(j)
   	   }, j * 1000)
      })(i)
