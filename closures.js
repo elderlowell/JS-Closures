@@ -220,7 +220,14 @@ var allUsers = ["Tom", "Dick", "Harry", "Anne", "Quinton", "Katie", "Mary"];
 
 function findPotentialFriends(existingFriends) {
   return function(givenUser) {
-
+    for (var prop in existingFriends) {
+      if (givenUser !== existingFriends[prop]) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
   }
 }
 
