@@ -197,6 +197,9 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
+    publicMethod: function() {
+      privateMethod();
+      }
   };
 
 })();
@@ -216,7 +219,9 @@ var secondLevelFriends = ["Anne", "Harry", "Quinton"];
 var allUsers = ["Tom", "Dick", "Harry", "Anne", "Quinton", "Katie", "Mary"];
 
 function findPotentialFriends(existingFriends) {
+  return function(givenUser) {
 
+  }
 }
 
 var isNotAFriend = findPotentialFriends( friends );
@@ -257,9 +262,11 @@ to 5. What we need to do is console.log(i) so that it logs like so:
 
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
-    setTimeout(function() {
-    	console.log(i)
-	}, i * 1000)
+    (function(j) {
+      setTimeout(function(j) {
+      	console.log(j)
+  	   }, j * 1000)
+     })(i)
   }
 }
 timeOutCounter();
