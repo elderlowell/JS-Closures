@@ -153,7 +153,7 @@ function motivation(firstname, lastname) {
 
   // code message function here.
   function message() {
-    return welcomeText + firstname + ' ' + lastname;
+    return welcomeText + firstname + ' ' + lastname + '.';
   }
 
 
@@ -198,11 +198,13 @@ var module = (function() {
   return {
     // Code here.
     publicMethod: function() {
-      privateMethod();
+      return privateMethod();
       }
   };
 
 })();
+
+module.publicMethod();
 
 
 
@@ -220,14 +222,13 @@ var allUsers = ["Tom", "Dick", "Harry", "Anne", "Quinton", "Katie", "Mary"];
 
 function findPotentialFriends(existingFriends) {
   return function(givenUser) {
+    var check = true;
     for (var prop in existingFriends) {
-      if (givenUser !== existingFriends[prop]) {
-        return true;
-      }
-      else {
-        return false;
+      if (givenUser === existingFriends[prop]) {
+        check = false;
       }
     }
+    return check;
   }
 }
 
@@ -240,11 +241,11 @@ var isNotAFriend = findPotentialFriends( friends );
  #PROBLEM-07 -- BLACK DIAMOND
  \******************************************************************************/
 /* Using your findPotentialFriends function from above and the Array.filter
-method, find all potential second level friends as well as potential friends
+method, find all potential friends from secondLevelFriends as well as potential friends
 from allUsers. */
 
-var potentialSecondLevelFriends = "?";
-var allPotentialFriends = "?";
+var potentialSecondLevelFriends = secondLevelFriends.filter(isNotAFriend);
+var allPotentialFriends = allUsers.filter(isNotAFriend);
 
 
 /******************************************************************************\
